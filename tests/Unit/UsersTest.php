@@ -16,9 +16,17 @@ class UsersTest extends TestCase
     public function testInsertUser()
     {
         $user = new User();
-        $user->name ='Deep';
-        $user->email ='deep39@njit.com';
-        $user->password ='qWeRtYuI';
+        $user->name ='Deeppp';
+        $user->email ='deeppp39@njit.com';
+        $user->password ='qWeRtYuI12';
         $this->assertTrue($user->save());
+    }
+    public function testUpdateUser()
+    {
+        $user = User::all()->last();
+        $user-> where('name', 'Deeppp')
+            -> update(['name' => 'Steve smith']);
+        $this->assertTrue($user->save());
+
     }
 }
