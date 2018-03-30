@@ -35,4 +35,9 @@ class CarsTest extends TestCase
         $this->assertTrue($car->save());
 
     }
+    public function testDeleteCar()
+    {
+        $car = Car::all()->last();
+        $this->assertTrue($car->save());
+    }
 }
